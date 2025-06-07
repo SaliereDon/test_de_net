@@ -235,7 +235,11 @@ class AsyncTokenAnalyzer:
                     break
         
         return events
-# Пример использования
+
+    def _to_decimal(self, value: int) -> float:
+            """Конвертация с учетом decimals"""
+            return value / (10 ** self.decimals)
+
 async def main():
     analyzer = AsyncTokenAnalyzer()
     await analyzer.initialize()

@@ -31,7 +31,7 @@ async def get_balance_batch(
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
     
-@app.get("/get_balance_batch_date")
+@app.get("/get_top_date")
 async def get_balance_batch_with_date(n: int = 10):
     try:
         top = await analyzer.get_top_with_transactions(n)
